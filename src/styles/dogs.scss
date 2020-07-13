@@ -5,6 +5,11 @@ $btnSize: 28px;
 
 .dogs {
 
+  &-sort {
+    display: flex;
+    align-items: center;
+  }
+
   &-breeds {
 
     user-select: none;
@@ -17,6 +22,26 @@ $btnSize: 28px;
 
     span {
       cursor: pointer;
+    }
+
+    &-select {
+      display: inline-flex;
+      align-items: center;
+      height: 24px;
+      color: #fff;
+      &:after {
+        content: "";
+        display: block;
+        margin-left: 6px;
+        width: 16px;
+        height: 16px;
+        background: url("/arrow.svg") center no-repeat;
+        border-radius: 50%;
+        transition: .3s transform linear;
+      }
+      &.active:after {
+        transform: rotateZ(-180deg);
+      }
     }
 
     &-btn {
@@ -48,7 +73,7 @@ $btnSize: 28px;
     }
 
     &-list {
-      color: #626262;
+      //color: #626262;
       .dogs-breeds-btn {
         margin: 4px 12px 4px 0;
       }
@@ -77,6 +102,7 @@ $btnSize: 28px;
       position: absolute;
       right: 12px;
       bottom: 6px;
+      color: #fff;
     }
 
     &-fav {
@@ -143,6 +169,34 @@ $btnSize: 28px;
 
   }
 
+}
+
+$switcherWidth: 28px;
+$switcherHeight: 16px;
+
+.switcher {
+  display: inline-block;
+  width: $switcherWidth;
+  height: $switcherHeight;
+  margin-left: 6px;
+  border-radius: $switcherHeight/2;
+  position: relative;
+  border: 1px solid $color2;
+  &:after {
+    content: "";
+    display: block;
+    width: $switcherHeight - 6px;
+    height: $switcherHeight - 6px;
+    left: 2px;
+    top: 2px;
+    position: absolute;
+    background: $color2;
+    border-radius: 50%;
+    transition: .1s left linear;
+  }
+  &.active:after {
+    left: $switcherWidth - $switcherHeight + 2px;
+  }
 }
 
 .slide-enter-active {

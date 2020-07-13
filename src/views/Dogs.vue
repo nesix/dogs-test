@@ -3,10 +3,10 @@
 
     <div class="dogs-breeds">
       <div>
-        <span @click="breedsVisible = !breedsVisible">Породы</span>
+        <span @click="breedsVisible = !breedsVisible" class="dogs-breeds-select" :class="{active: breedsVisible}">Породы</span>
         <router-link class="dogs-breeds-btn active" type="reset" :to="{name:'dogs'}" v-if="breedId">{{ getName(breedId) }}</router-link>
       </div>
-      <span @click="sorted = !sorted">Сортировать по алфавиту</span>
+      <span @click="sorted = !sorted" class="dogs-sort">Сортировать по алфавиту <span class="switcher" :class="{active: sorted}" /></span>
     </div>
 
     <transition name="slide">
