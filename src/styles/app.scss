@@ -1,0 +1,56 @@
+
+@import "reset";
+@import "vars";
+
+$barSize: 50px;
+
+.app {
+
+  &-bar {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: #151419;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $barSize;
+    padding: 0 $spacing;
+  }
+
+  &-title {
+    text-transform: uppercase;
+    color: $color1;
+    font-size: 1.2rem;
+  }
+
+  &-fav {
+
+    font-size: .9rem;
+    letter-spacing: 0.01em;
+    color: #626262;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    img {
+      height: 16px;
+      margin-left: 6px;
+      opacity: .7;
+    }
+
+  }
+
+  &-content {
+    margin-top: $barSize;
+    padding: $spacing;
+  }
+
+}
+
+@import "dogs";
